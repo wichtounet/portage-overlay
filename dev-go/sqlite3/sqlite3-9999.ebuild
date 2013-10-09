@@ -10,7 +10,7 @@ SRC_URI="https://github.com/mattn/go-sqlite3"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=">=dev-lang/go-1.1.1
