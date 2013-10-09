@@ -2,11 +2,11 @@
 <repositories xmlns="" version="1.0">
     <repo quality="experimental" status="unofficial">
         <name>wichtounet</name>
-        <description lang="en">Baptiste Wicht's Gentoo Overlay></description>
+        <description lang="en">Baptiste Wicht's Gentoo Overlay</description>
         <homepage>http://github.com/wichtounet/portage-overlay</homepage>
         <owner type="person">
             <email>baptiste.wicht@gmail.com</email>
-            <name>Baptiste Wicht></name>
+            <name>Baptiste Wicht</name>
         </owner>
         <source type="git">git://github.com/wichtounet/portage-overlay.git</source>
         <feed>http://github.com/wichtounet/portage-overlay/commits/master.atom</feed>
