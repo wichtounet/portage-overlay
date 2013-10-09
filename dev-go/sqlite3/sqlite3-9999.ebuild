@@ -6,7 +6,6 @@ EAPI=5
 
 DESCRIPTION="sqlite3 driver for Go"
 HOMEPAGE="https://github.com/mattn/go-sqlite3"
-SRC_URI="https://github.com/mattn/go-sqlite3"
 
 LICENSE="MIT"
 SLOT="0"
