@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<?xml version="1.0"?>
 <repositories xmlns="" version="1.0">
     <repo quality="experimental" status="unofficial">
-        <name><![CDATA[wichtounet]]></name>
-        <description lang="en"><![CDATA[Personal User Overlay]]></description>
+        <name>wichtounet></name>
+        <description lang="en">Baptiste Wicht's Gentoo Overlay></description>
         <homepage>http://github.com/wichtounet/portage-overlay</homepage>
         <owner type="person">
             <email>baptiste.wicht@gmail.com</email>
-            <name><![CDATA[Baptiste Wicht]]></name>
+            <name>Baptiste Wicht></name>
         </owner>
         <source type="git">git://github.com/wichtounet/portage-overlay.git</source>
         <feed>http://github.com/wichtounet/portage-overlay/commits/master.atom</feed>
