@@ -30,11 +30,11 @@ src_unpack() {
 	mkdir -p ${P}
 }
 
-src_compile() {
-	#Fake the compile
+src_install() {
+	#Fake the install
 	mkdir -p ${D}
 }
 
-src_install() {
+pkg_postinst(){
 	go get github.com/mattn/go-sqlite3
 }
