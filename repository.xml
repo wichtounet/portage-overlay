@@ -2,7 +2,7 @@
 <!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
 <repositories xmlns="" version="1.0">
     <repo quality="experimental" status="unofficial">
-        <name><![CDATA[wichtounet]></name>
+        <name><![CDATA[wichtounet]]></name>
         <description lang="en"><![CDATA[Personal User Overlay]]></description>
         <homepage>http://github.com/wichtounet/portage-overlay</homepage>
         <owner type="person">
