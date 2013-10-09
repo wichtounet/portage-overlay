@@ -6,9 +6,8 @@ EAPI=5
 
 DESCRIPTION="sqlite3 driver for Go"
 HOMEPAGE="https://github.com/mattn/go-sqlite3"
-EGIT_REPO_URI="https://github.com/mattn/go-sqlite3.git"
 
-inherit git-2 eutils
+inherit eutils
 
 LICENSE="MIT"
 SLOT="0"
@@ -27,10 +26,15 @@ pkg_setup() {
 }
 
 src_unpack() {
-	git-2_src_unpack
+	#Fake the unpack
+	mkdir -p ${P}
+}
+
+src_compile() {
+	#Fake the compile
+	mkdir -p ${D}
 }
 
 src_install() {
-	# go install ${P}
 	go get github.com/mattn/go-sqlite3
 }
