@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <repositories xmlns="" version="1.0">
     <repo quality="experimental" status="unofficial">
-        <name>wichtounet></name>
+        <name>wichtounet</name>
         <description lang="en">Baptiste Wicht's Gentoo Overlay></description>
         <homepage>http://github.com/wichtounet/portage-overlay</homepage>
         <owner type="person">
