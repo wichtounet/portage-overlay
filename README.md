@@ -11,6 +11,10 @@ Usage
         overlays: http://www.gentoo.org/proj/en/overlays/repositories.xml
                   http://github.com/wichtounet/portage-overlay/raw/master/repository.xml
 
-2. Execute following command:
+2. Sync layman
+
+        layman -S
+
+3. Add the overlay:
 
         layman -a wichtounet
