@@ -30,9 +30,14 @@ src_prepare(){
 }
 
 src_compile(){
-	emake clean generate compile dist
+	emake clean generate compile
 }
 
 src_install() {
-	emake install
+	dobin bin/tmsu
+	dosbin misc/bin/mount.tmsu
+	doman misc/man/tmsu.1
+
+	insinto /usr/share/zsh/site-functions/
+	newins misc/zsh/_tmsu _tmsu
 }
