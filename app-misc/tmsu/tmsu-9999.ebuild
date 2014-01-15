@@ -29,8 +29,8 @@ src_prepare(){
 	epatch "${FILESDIR}/Makefile.patch"
 }
 
-src_install(){
-	emake
+src_compile(){
+	emake clean generate compile dist
 }
 
 src_install() {
