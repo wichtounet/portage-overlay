@@ -19,4 +19,4 @@ RDEPEND=">=dev-libs/boost-1.52.0"
 DEPEND=">=dev-util/cmake-2.8.10
 		${RDEPEND}"
 
-EGIT_REPO_URI="https://github.com/wichtounet/budgetwarrior.git"
+EGIT_REPO_URI="https://github.com/wichtounet/${PN}.git"
