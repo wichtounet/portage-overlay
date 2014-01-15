@@ -4,8 +4,8 @@
 
 EAPI=5
 
-DESCRIPTION="TMSU: Tagging file management system"
-HOMEPAGE="http://www.tmsu.org/"
+DESCRIPTION="budgetwarrior, a simple command line personal accounting utility"
+HOMEPAGE="http://www.github.com/wichtounet/budgetwarrior/"
 
 inherit eutils git-2 cmake-utils
 
