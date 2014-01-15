@@ -11,7 +11,7 @@ inherit cmake-utils
 
 LICENSE="Boost"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="amd64 x86"
 IUSE=""
 
 RDEPEND=">=dev-libs/boost-1.52.0"
