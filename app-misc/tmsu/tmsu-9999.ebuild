@@ -25,6 +25,10 @@ DEPEND="
 
 EHG_REPO_URI="https://bitbucket.org/oniony/tmsu"
 
+src_prepare(){
+	epatch "${FILESDIR}/Makefile.patch"
+}
+
 src_install(){
 	emake
 }
