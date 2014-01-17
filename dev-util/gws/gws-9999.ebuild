@@ -3,20 +3,20 @@
 # $Header: $
 
 EAPI=5
-inherit eutils
+inherit eutils git-2
 
 DESCRIPTION="workspace manager"
 HOMEPAGE="https://github.com/StreakyCobra/gws"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=app-shells/bash-4.0"
 RDEPEND="${DEPEND}"
 
-SRC_URI="https://github.com/StreakyCobra/${PN}/archive/${PV}.tar.gz"
+EGIT_REPO_URI="https://github.com/StreakyCobra/${PN}.git"
 
 src_install() {
 	dobin gws
