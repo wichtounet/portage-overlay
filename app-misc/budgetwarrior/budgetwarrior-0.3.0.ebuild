@@ -33,8 +33,8 @@ src_install() {
 	doman budget.1
 
 	insinto /usr/share/bash/bash_completions/
-	newins completions/bash gws
+	newins completions/bash budget
 
 	insinto /usr/share/zsh/size-functions/
-	newins completions/zsh _gws
+	newins completions/zsh _budget
 }
