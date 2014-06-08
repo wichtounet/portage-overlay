@@ -164,10 +164,12 @@ src_configure() {
 	)
 
 	if use libcxx; then
+		export CC="/usr/bin/clang"
+		export CXX="/usr/bin/clang++"
 		mycmakeargs+=( 
 			-DCMAKE_CXX_FLAGS="-std=c++11 -stdlib=libc++"
-			-DCMAKE_C_COMPILER="clang"
-			-DCMAKE_CXX_COMPILER="clang++"
+			-DCMAKE_C_COMPILER="/usr/bin/clang"
+			-DCMAKE_CXX_COMPILER="/usr/bin/clang++"
 		)
 	fi
 
