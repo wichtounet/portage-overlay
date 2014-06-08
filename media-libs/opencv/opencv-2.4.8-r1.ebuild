@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/opencvlibrary/opencv-unix/${PV}/${P}.zip"
 LICENSE="BSD"
 SLOT="0/2.4"
 KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux"
-IUSE="cuda doc +eigen examples ffmpeg gstreamer gtk ieee1394 ipp jpeg jpeg2k opencl openexr opengl openmp pch png +python qt4 testprograms threads tiff v4l xine libcxx"
+IUSE="cuda doc +eigen examples ffmpeg gstreamer gtk ieee1394 ipp jpeg jpeg2k opencl openexr opengl openmp pch png +python qt4 testprograms threads tiff v4l xine libcxx static-libs"
 REQUIRED_USE="
 	python? ( ${PYTHON_REQUIRED_USE} )
 "
@@ -99,6 +99,9 @@ src_prepare() {
 }
 
 src_configure() {
+	BUILD_DIR=${WORKDIR}/${P}_build_normal
+	mkdir -p ${BUILD_DIR}
+
 	if use openmp; then
 		tc-has-openmp || die "Please switch to an openmp compatible compiler"
 	fi
@@ -150,7 +153,7 @@ src_configure() {
 		$(cmake-utils_use_build testprograms TESTS)
 	# install examples
 		$(cmake-utils_use examples INSTALL_C_EXAMPLES)
-	# build options
+		# build options
 		$(cmake-utils_use_enable pch PRECOMPILED_HEADERS)
 		-DENABLE_OMIT_FRAME_POINTER=OFF				#
 		-DENABLE_FAST_MATH=OFF					#
@@ -225,4 +228,35 @@ src_configure() {
 	tc-export CC CXX
 
 	cmake-utils_src_configure
+
+	if use static-libs; then
+		BUILD_DIR=${WORKDIR}/${P}_build_static
+		mkdir -p ${BUILD_DIR}
+
+		mycmakeargs+=( 
+		-DBUILD_SHARED_LIBS=OFF
+		)
+
+		cmake-utils_src_configure
+	fi
+}
+
+src_compile(){
+	BUILD_DIR=${WORKDIR}/${P}_build_normal
+	cmake-utils_src_compile
+
+	if use static-libs; then
+		BUILD_DIR=${WORKDIR}/${P}_build_static
+		cmake-utils_src_compile
+	fi
+}
+
+src_install(){
+	BUILD_DIR=${WORKDIR}/${P}_build_normal
+	cmake-utils_src_install
+
+	if use static-libs; then
+		BUILD_DIR=${WORKDIR}/${P}_build_static
+		cmake-utils_src_install
+	fi
 }
