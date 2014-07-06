@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 # TODO: implement "prefix" flag like in original mutt. Must test it first.
 # TODO: test mbox flag
 IUSE="berkdb crypt debug doc gdbm gnutls gpg idn imap notmuch mbox nls pop
-qdbm sasl smime smtp ssl tokyocabinet"
+qdbm sasl smime smtp ssl tokyocabinet slang"
 
 # dependencies used several times
 RDEPEND_PROTOCOL="
@@ -28,7 +28,6 @@ RDEPEND_PROTOCOL="
 RDEPEND="
 	app-misc/mime-types
 	!mail-client/mutt
-	>=sys-libs/ncurses-5.2
 	gpg? ( >=app-crypt/gpgme-0.9.0 )
 	idn? ( net-dns/libidn )
 	imap? ( ${RDEPEND_PROTOCOL} )
@@ -42,7 +41,10 @@ RDEPEND="
 			gdbm? ( sys-libs/gdbm )
 			!gdbm? ( berkdb? ( >=sys-libs/db-4 ) )
 		)
-	)"
+	)
+	slang? ( sys-libs/slang )
+	!slang? ( >=sys-libs/ncurses-5.2 )
+	"
 # unsure if mailbase only belongs to DEPEND
 # unsure on mutt flag for net-mail/notmuch
 # unsure on crypt dependency too
@@ -97,6 +99,8 @@ src_configure() {
 		$(use_enable smtp) \
 		$(use_with idn) \
 		$(use_with !notmuch mixmaster) \
+		$(use slang && echo --with-slang) \
+		--enable-compressed \
 		--enable-external-dotlock \
 		--enable-nfs-fix \
 		--sysconfdir="${EPREFIX}"/etc/${MY_PN} \
