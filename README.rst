@@ -3,8 +3,9 @@ wichtounet-overlay
 
 This portage overlay contains several ebuilds: 
 
-* app-misc/budgetwarrior : A command line budget manager
+* app-misc/budgetwarrior : A command line personal accounting manager
 * app-misc/tmsu: A tagging manager
+* app-misc/tagsistant: A tagging filesystem
 * app-misc/vit: A frontend for taskwarrior
 * dev-go/fuse: A library to use FUSE in Go
 * dev-go/sqlite3: A library to use Sqlite in Go
