@@ -11,7 +11,7 @@ inherit eutils git-2
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=app-misc/task-2.1.2 dev-perl/Curses"
@@ -19,8 +19,8 @@ RDEPEND=">=app-misc/task-2.1.2 dev-perl/Curses"
 DEPEND="${RDEPEND}"
 
 EGIT_REPO_URI="https://git.tasktools.org/scm/ex/vit.git"
-EGIT_TAG="1.2"
+EGIT_BRANCH="1.3"
 
-src_configure(){
-	econf --prefix=${D}
-}
+#src_configure(){
+	#econf --prefix=${D}
+#}
