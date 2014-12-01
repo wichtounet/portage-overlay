@@ -170,7 +170,7 @@ src_configure() {
 		export CC="/usr/bin/clang"
 		export CXX="/usr/bin/clang++"
 		mycmakeargs+=(
-			-DCMAKE_CXX_FLAGS="-std=c++11 -stdlib=libc++ -Wno-tautological-pointer-compare -Wno-pointer-bool-conversion"
+			-DCMAKE_CXX_FLAGS="-std=c++11 -stdlib=libc++"
 			-DCMAKE_C_COMPILER="/usr/bin/clang"
 			-DCMAKE_CXX_COMPILER="/usr/bin/clang++"
 		)
