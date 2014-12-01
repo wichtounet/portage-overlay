@@ -169,8 +169,8 @@ src_configure() {
 	if use libcxx; then
 		export CC="/usr/bin/clang"
 		export CXX="/usr/bin/clang++"
-		mycmakeargs+=( 
-			-DCMAKE_CXX_FLAGS="-std=c++11 -stdlib=libc++"
+		mycmakeargs+=(
+			-DCMAKE_CXX_FLAGS="-std=c++11 -stdlib=libc++ -Wno-error=tautological-pointer-compare -Wno-error=pointer-bool-conversion"
 			-DCMAKE_C_COMPILER="/usr/bin/clang"
 			-DCMAKE_CXX_COMPILER="/usr/bin/clang++"
 		)
@@ -233,7 +233,7 @@ src_configure() {
 		BUILD_DIR=${WORKDIR}/${P}_build_static
 		mkdir -p ${BUILD_DIR}
 
-		mycmakeargs+=( 
+		mycmakeargs+=(
 		-DBUILD_SHARED_LIBS=OFF
 		)
 
