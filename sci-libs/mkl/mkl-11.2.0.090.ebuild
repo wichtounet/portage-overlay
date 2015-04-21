@@ -126,6 +126,7 @@ src_unpack() {
 		eerror "See ${PWD}/log.txt to see why"
 		die "extracting failed"
 	fi
+
 	# remove left over
 	rm -f /opt/intel/.*mkl*.log /opt/intel/intel_sdp_products.db
 
@@ -150,7 +151,7 @@ src_unpack() {
 }
 
 src_compile() {
-	cd "${S}"/interfaces
+	cd "${S}"/mkl/interfaces
 	if use fortran95; then
 		einfo "Compiling fortan95 static lib wrappers"
 		local myconf="lib${MKL_ARCH}"
@@ -207,7 +208,7 @@ src_test() {
 }
 
 mkl_make_generic_profile() {
-	cd "${S}"
+	cd "${S}/mkl"
 	# produce eselect files
 	# don't make them in FILESDIR, it changes every major version
 	cat  > eselect.blas <<-EOF
@@ -230,7 +231,7 @@ mkl_make_generic_profile() {
 
 # usage: mkl_add_profile <profile> <interface_lib> <thread_lib> <rtl_lib>
 mkl_add_profile() {
-	cd "${S}"
+	cd "${S}/mkl"
 	local prof=${1}
 	for x in blas cblas lapack; do
 		cat > ${x}-${prof}.pc <<-EOF
