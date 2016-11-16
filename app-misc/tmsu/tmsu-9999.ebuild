@@ -1,13 +1,13 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=6
 
 DESCRIPTION="TMSU: Tagging file management system"
-HOMEPAGE="http://www.tmsu.org/"
+HOMEPAGE="http://tmsu.org/"
 
-inherit eutils mercurial
+inherit eutils git-r3
 
 LICENSE="MIT"
 SLOT="0"
@@ -15,26 +15,25 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="
-		>=dev-lang/go-1.1.1
-		=dev-go/fuse-9999
-		=dev-go/sqlite3-9999"
+	>=dev-lang/go-1.1.1
+	=dev-go/fuse-9999
+	=dev-go/sqlite3-9999"
 
 DEPEND="
-		>=dev-vcs/mercurial-2.4.2
-		${RDEPEND}"
+	dev-vcs/git
+	${RDEPEND}"
 
-EHG_REPO_URI="https://bitbucket.org/oniony/tmsu"
-
-src_prepare(){
-	epatch "${FILESDIR}/Makefile.patch"
-}
+EGIT_REPO_URI="https://github.com/oniony/TMSU"
 
 src_compile(){
-	emake clean generate compile
+	emake
 }
 
 src_install() {
 	dobin bin/tmsu
+	dobin misc/bin/tmsu-fs-merge
+	dobin misc/bin/tmsu-fs-mv
+	dobin misc/bin/tmsu-fs-rm
 	dosbin misc/bin/mount.tmsu
 	doman misc/man/tmsu.1
 
