@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/sci-libs/mkl/mkl-10.0.5.025.ebuild,v 1.20 2015/03/31 20:12:53 ulm Exp $
 
+EAPI=4
+
 inherit eutils fortran-2 multilib toolchain-funcs check-reqs
 
 PID=4498
