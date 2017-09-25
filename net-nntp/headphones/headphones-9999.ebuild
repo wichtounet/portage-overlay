@@ -26,7 +26,7 @@ pkg_setup() {
 }
 
 src_install() {
-	dodoc API_REFERENCE README.md TODO
+	dodoc README.md
 
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
 	newinitd "${FILESDIR}/${PN}.init" ${PN}
