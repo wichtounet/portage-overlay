@@ -7,7 +7,7 @@ EAPI=5
 DESCRIPTION="budgetwarrior, a simple command line personal accounting utility"
 HOMEPAGE="http://www.github.com/wichtounet/budgetwarrior/"
 
-inherit eutils git-2 cmake-utils
+inherit eutils git-r3 cmake-utils
 
 LICENSE="Boost"
 SLOT="0"
