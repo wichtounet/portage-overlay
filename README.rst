@@ -10,7 +10,6 @@ This portage overlay contains several ebuilds:
 * dev-go/fuse: A library to use FUSE in Go
 * dev-go/sqlite3: A library to use Sqlite in Go
 * dev-util/gws: A Git workspace manager
-* mail-client/mutt-kz: A fork of the Mutt mail client
 * media-libs/opencv: OpenCV ebuild with support for libc++ and static-libs USE flag
 
 Usage
